@@ -4,4 +4,32 @@
 
 Given a sequence of positive integers \(m_i\), consider the sub-space
 \(K \coloneqq \{n \in \mathcal N \mid n_i \leq m_i\} \subset \mathcal N\). We show that \(K\) is a compact
-sub-space of \(\mathcal N\). 
+sub-space of \(\mathcal N\).
+
+To accomplish this, we use the lexiographic ordering on \(\mathcal N\). That is, \(x < y\) for
+\(x, y \in \mathcal N\) if \(x_i < y_i\) for the smallest \(i\) such that \(x_i \neq y_i\).
+
+First, a lemma. 
+\begin{lemma}
+Given bounded set \(S \subset \mathcal N\), we have that \(\sup S\) exists, i.e. that \(S\) has least
+upper bound.
+\end{lemma}
+\begin{proof}
+We recursively construct \(m \in \mathcal N\) such that \(s \leq m\) for all \(s \in S\). Since, \(S\) is
+bounded, we have that the set of positive integers \(\{s_1 \mid s \in S\}\) is bounded. We let \(m_1\) be this
+maximum. 
+
+Now, given \(j\), suppose we have constructed \(m_i\) for \(i < j\) such that there exists \(s \in S\) with
+\(s_i = m_i\) for \(i < j\) and for any \(s \in S\) we have that \(s_i \leq m_i\) for \(i < j\). 
+
+Now, if the set of positive integers
+\(S_j \coloneqq \{s_j \mid s \in S \text{ and } s_i = m_i \text{ for } i < j\}\) is unbounded, then we may choose 
+\(m = (m_1,..., m_{j-2}, 1 + m_{j-1}, 1, 1, ...)\) and we see that \(m\) is a least upper bound of \(S\).
+So consider the case that this set is bounded. Then we let \(m_j\) be its maximum.
+
+We have recursively constructed our \(m_j\). We need only consider the case that the sets \(S_j\) are bounded
+for each step of our recursion. Clearly \(m\) is an upper bound for \(S\). Furthermore, consider any \(x < m\)
+such that \(i\) is the first component where \(x_i < m_i\). Then by construction, there is an \(s \in S_i\) such
+that \(s > x\). Hence \(m\) is a least upper bound. 
+
+\end{proof}
