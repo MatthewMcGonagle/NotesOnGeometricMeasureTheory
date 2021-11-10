@@ -31,5 +31,22 @@ We have recursively constructed our \(m_j\). We need only consider the case that
 for each step of our recursion. Clearly \(m\) is an upper bound for \(S\). Furthermore, consider any \(x < m\)
 such that \(i\) is the first component where \(x_i < m_i\). Then by construction, there is an \(s \in S_i\) such
 that \(s > x\). Hence \(m\) is a least upper bound. 
-
 \end{proof}
+
+Now consider the set \(S\) of points \(s \in \mathcal N\) such that the set
+\(K_s \coloneqq \{k \mid k \in K \text{ and } k \leq s\}\) is compact. Since
+\(1 \coloneqq (1, 1, 1, ...) = \min K\), we see that \(1 \in S\). Furthermore, \(\max K = m\); so \(S\) is
+bounded.
+
+Let \(M = \sup S\). We wish to show that \(M \in S\). So let \(K_M\) be covered by a collection of open sets
+\(U_\alpha\). Let \(U_0\) be an open set covering \(M\). So we know that there exists \(i_0\) such that all
+points in \(K\) of the form \((M_1, M_2, ..., M_{i_0}, n_{i_0+1}, n_{i_0 + 2}, ...)\) for
+general \(n_i\) are in \(U_0\).  
+
+Consider the case that \(M_i > 1\) for some \(i > i_0\). Then there exists a point \(k \in K\) such that
+\(k < M\) and \(k \in U_0\), namely \(k = (M_1, ..., M_{i_0}, 1, 1, 1, ...)\). By the definition of \(M\), we
+have that \(K_k\) is compact. So we cover \(K_M\) in a finite number of \(U_alpha\) and \(K_M\) is compact.
+
+Consider the final case that \(M_i = 1\) for all \(i > i_0\), i.e. \(M = (M_1, ..., M_{i_0}, 1, 1, 1, ...)\).
+From the definition of \(K\) we know that \(k = (M_1, ..., M_{i_0} - 1, m_{i_0 + 1}, m_{i_0 + 2}, ...) \in K\),
+\(k < M\), and there are no \(x \in K\) such that \(k < x < M\). TODO: Need to handle \(M_{i_0} = 1\).
