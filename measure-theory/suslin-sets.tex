@@ -4,7 +4,8 @@
 
 Given a sequence of positive integers \(m_i\), consider the sub-space
 \(K \coloneqq \{n \in \mathcal N \mid n_i \leq m_i\} \subset \mathcal N\). We show that \(K\) is a compact
-sub-space of \(\mathcal N\).
+sub-space of \(\mathcal N\). First note that if \(m_i > 1\) for only a finitely many \(i\), then \(K\) is a finite
+set and must be compact. Therefore, we need only consider the case that \(m_i > 1\) for infinitely many  \(i\).
 
 To accomplish this, we use the lexiographic ordering on \(\mathcal N\). That is, \(x < y\) for
 \(x, y \in \mathcal N\) if \(x_i < y_i\) for the smallest \(i\) such that \(x_i \neq y_i\).
@@ -33,20 +34,49 @@ such that \(i\) is the first component where \(x_i < m_i\). Then by construction
 that \(s > x\). Hence \(m\) is a least upper bound. 
 \end{proof}
 
-Now consider the set \(S\) of points \(s \in \mathcal N\) such that the set
-\(K_s \coloneqq \{k \mid k \in K \text{ and } k \leq s\}\) is compact. Since
-\(1 \coloneqq (1, 1, 1, ...) = \min K\), we see that \(1 \in S\). Furthermore, \(\max K = m\); so \(S\) is
-bounded.
+Now consider an open covering \(U_\alpha\) of \(K\) and the set \(S\) of points \(s \in \mathcal N\) such
+that \(s \leq m\) and the set \(K_s \coloneqq \{k \mid k \in K \text{ and } k \leq s\}\) is covered by a
+finite sub-collection of \(U_\alpha\). Since \(1 \coloneqq (1, 1, 1, ...) = \min K\), we see that \(1 \in S\).
+Furthermore, by construction \(S\) is bounded. 
 
-Let \(M = \sup S\). We wish to show that \(M \in S\). So let \(K_M\) be covered by a collection of open sets
-\(U_\alpha\). Let \(U_0\) be an open set covering \(M\). So we know that there exists \(i_0\) such that all
+Next, note that for some \(i_0\), all points in \(K\) of the form \((1, 1, ..., 1, n_{i_0}, n_{i_0 + 1}, ...)\)
+are in an open set \(U_1\) covering \(1\). Since \(m_i > 1\) for infinitely many \(i\), this means that there
+exists \(k_0 \in K \cap U_1\) such that all \(K_{k_0} \subset U_1\). Therefore \(M \coloneqq \sup S > 1\).
+
+Given any \(x \in \mathcal N\) that is an upper bound for \(S\), we have that \(y \in \mathcal N\) defined by
+\(y_i \coloneqq \min \{x_i, m_i\}\) is also an upper bound for \(S\). Therefore \(M_i \leq m_i\); note that
+this is a stronger condition than \(M \leq m\). 
+
+We wish to show that \(M \in S\). Since \(M_i \leq m_i\), we have that \(M \in K\). So let \(U_M\) be an
+open set covering \(M\). So we know that there exists \(i_0\) such that all
 points in \(K\) of the form \((M_1, M_2, ..., M_{i_0}, n_{i_0+1}, n_{i_0 + 2}, ...)\) for
-general \(n_i\) are in \(U_0\).  
+general \(n_i\) are in \(U_M\).  
 
-Consider the case that \(M_i > 1\) for some \(i > i_0\). Then there exists a point \(k \in K\) such that
-\(k < M\) and \(k \in U_0\), namely \(k = (M_1, ..., M_{i_0}, 1, 1, 1, ...)\). By the definition of \(M\), we
-have that \(K_k\) is compact. So we cover \(K_M\) in a finite number of \(U_alpha\) and \(K_M\) is compact.
+Consider the case that \(M_{j_0} > 1\) for some \(j_0 > i_0\). Then there exists a point \(k \in K\) such that
+\(k < M\) and \(k \in U_M\), namely \(k = (M_1, ..., M_{i_0}, 1, 1, 1, ...)\). Note that all \(x \in K\)
+satisfying \(k \leq x \leq M\) are also in \(U_M\). By the definition of \(M\), we
+have that \(K_k\) is covered by a finite sub-collection \(U_\alpha\). When combined with \(U_M\)
+we see that \(K_M\) is also covered by a finite sub-collection and so \(M \in S\). 
 
-Consider the final case that \(M_i = 1\) for all \(i > i_0\), i.e. \(M = (M_1, ..., M_{i_0}, 1, 1, 1, ...)\).
-From the definition of \(K\) we know that \(k = (M_1, ..., M_{i_0} - 1, m_{i_0 + 1}, m_{i_0 + 2}, ...) \in K\),
-\(k < M\), and there are no \(x \in K\) such that \(k < x < M\). TODO: Need to handle \(M_{i_0} = 1\).
+Consider the final case that \(M_j = 1\) for all \(j > i_0\), i.e. \(M = (M_1, ..., M_{i_0}, 1, 1, 1, ...)\).
+We know that \(M > 1\) so there must exist a greatest \(j_0 \leq i_0\) such that \(M_{j_0} > 1\). Consider
+the point
+\(x = (M_1, ..., M_{j_0}-1, m_{j_0 + 1}, m_{j_0 + 2}, ...) \in K\). We have that \(x < M\) and that there are
+no points \(y \in K\) such that \(x < y < M\). We may cover \(K_x\) with a finite sub-collection of the
+\(U_\alpha\), and then we combined with \(U_M\) we have a finite sub-collection covering \(K_M\). Therefore
+\(M \in S\). 
+
+We prove by contradiction that \(M = m\). Consider if \(M < m\). Similar to above, consider an open set
+\(U_M\) covering \(M\), and consider the case that there is a \(j_0 > i_0\) such that \(M_{j_0} < m_{j_0}\).
+Let \(x = (M_1, ..., M_{j_0 - 1}, m_{j_0}, 1, 1, 1, ...)\); note that all
+\(y \in K\) such that \(M < y \leq x\) are also covered by \(U_M\). Therefore \(K_x\) will also be
+covered by a finite sub-collection of \(U_\alpha\), which contradicts the definition of \(M\).
+
+Consider the final case that \(M_i = m_i\) for all \(i > i_0\) but that there exists a \(j_0 \leq i_0\) with
+\(M_{j_0} < m_{j_0}\). We may take \(j_0\) to be the largest such number. Let 
+\(x = (M_1, ..., M_{j_0 - 1}, M_{j_0} + 1, 1, 1, 1, ...) \in K\). We note that there are no \(y \in K\) such
+that \(M < y < x\). Since \(M \in S\), we may cover \(K_M\) with a finite sub-collection of \(U_\alpha\); this
+combined with a cover \(U_x\) of \(x\) gives a finite sub-cover for \(K_x\), which contradicts the
+definition of \(M\). 
+
+Therefore we have \(M = m\) and \(K\) may be covered by a finite sub-collection of \(U_\alpha\).
