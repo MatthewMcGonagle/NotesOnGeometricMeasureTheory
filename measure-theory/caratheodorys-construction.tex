@@ -1,0 +1,20 @@
+\subsection{An Identity for the Upper Integral based on Caratheodory's Construction (Federer 2.10.24 (1))} 
+Federer shows that the quantity \(\lambda_\delta(f)\) based on Caratheodory's construction matches the upper
+Lebesgue Integral \(\int^* f d\psi\) in certain cases. For the case  present in (Federer 2.10.24 (1)), he
+states that one can use (Federer 2.10.18 (3)) to show that there exists an increasing sequence of
+Borel sets \(B_i\) and a sequence of \(\epsilon_i > 0\) such that
+\begin{equation}
+\psi\left(\{x \mid f(x) > 0 \} \setminus \bigcup_i B_i \right) = 0,
+\end{equation}
+and \(\psi(B_i \cap S) \leq (1 + i^{-1}) \zeta(S)\) whenever \(S \in F\), \(B_i \cap S \neq \emptyset\),
+and \(\text{diam }S \leq \epsilon_i\). Here we will demonstrate this statement.
+
+\begin{proof}
+By assumption, we have that \(X\) is the union of a countable collection of sets \(A_i\) with
+\(\psi(A_i) < \infty\). Furthermore, it is clear that we may take these \(A_i\) to be increasing.
+From the Borel regularity of \(\psi\) we may also take the sets \(A_i\) to be an increasing Borel; that is,
+the Borel regularity gives us an \(\tilde A_i\) that is Borel such that \(A_i \subset \tilde A_i\) and
+\(\psi(A_i) = \psi(\tilde A_i)\). Then we can set \(A_i'  = \bigcap\limits_{j \geq i} \tilde A_j\), and we
+see that \(A_i'\) is an increasing sequence of Borel sets with finite measure and \(\psi(A_i') = \psi(A_i)\). 
+Therefore, we may originally consider the \(A_i\) to be an increasing sequence of Borel sets.
+\end{proof}
