@@ -1,0 +1,52 @@
+\subsection{An Identity for the Upper Integral based on Caratheodory's Construction (Federer 2.10.24 (1))} 
+Federer shows that the quantity \(\lambda_\delta(f)\) based on Caratheodory's construction matches the upper
+Lebesgue Integral \(\int^* f d\psi\) in certain cases. We will prove the following
+statement from the case of (Federer 2.10.24 (1)),
+\begin{proposition}
+In the case of (Federer 2.10.24 (1)), there exists an increasing sequence of
+Borel sets \(B_i\) and a sequence of \(\epsilon_i > 0\) such that
+\begin{equation}
+\psi\left(\{x \mid f(x) > 0 \} \setminus \bigcup_i B_i \right) = 0,
+\end{equation}
+and \(\psi(B_i \cap S) \leq (1 + i^{-1}) \zeta(S)\) whenever \(S \in F\), \(B_i \cap S \neq \emptyset\),
+and \(\text{diam }S \leq \epsilon_i\).
+\end{proposition}
+
+Now we prove the proposition.
+\begin{proof}
+It is clear that we may write \(\{x \mid f(x) > 0\} = \bigcup_j A_j\) for an increasing sequence of sets
+\(A_j\) with \(\psi(A_j) < \infty\). Given \(i\),  consider the set of
+\(C_{ij} = \{x \mid \psi(A_i \cap S) \leq (1 + i^{-1}) \zeta(S) \text{ for } x \in S
+    \text{ and diam } S \leq 1/j\}\). Note that \(C_{ij}\) is increasing in \(j\) and that 
+\(\psi\left( A_i \setminus \bigcup_{j} C_{ij} \right) = 0\) by (Federer 2.10.18 (3)). Therefore, we may
+find a set \(\tilde C_i\) and \(\epsilon_i > 0\) such that for all \(x \in \tilde C_i\) we have that
+\(\psi(A_i \cap S) \leq (1 + i^{-1}) \zeta(S)\)
+whenever \(x \in S\) and \(\text{diam } S < \epsilon_i\)
+; furthermore \(\psi(A_i \setminus \tilde C_i) \leq 2^{-i - 1}\). In particular,
+\(\psi(\tilde C_i \cap S) \leq (1 + i^{-1}) \zeta(S)\) whenever \(S \cap \tilde C_i \neq \emptyset\) and
+\(\text{diam } S \leq \epsilon_i\).
+
+From the Borel regularity of \(\psi\) we may find Borel sets \(B_i\) such that \(\tilde C_i \subset B_i\) and
+\(\psi(B_i) = \psi(\tilde C_i)\); note that \(B_i\) must then be a \(\psi\)-hull of \(\tilde C_i\).
+In particular, since
+each \(S \in F\) is closed and hence \(\psi\) measurable, we have that 
+\(\psi(B_i \cap S) \leq (1 + i^{-1}) \zeta(S)\) whenever \(S \cap \tilde C_i \neq \emptyset\) and
+\(\text{ diam } S \leq \epsilon_i\). Since each \(S \in F\) is measurable (since closed) and
+\(B_i\) is a \(\psi\)-hull of \(\tilde C_i\), we have that \(\psi(B_i \cap S) = \psi(\tilde C_i \cap S)\) for all
+\(S \in F\). Furthermore, if \(S \cap B_i \neq \emptyset\) but
+\(S \cap \tilde C_i = \emptyset\), then \(\psi(B_i \cap S) = 0\). So we we have
+that \(\psi(B_i \cap S) \leq (1 + i^{-1}) \zeta(S)\) whenever \(S \cap B_i \neq \emptyset\) and
+\(\text{ diam } S \leq \epsilon_i\).
+
+To form an increasing sequence of Borel sets, we set \(\tilde B_i = \bigcap_{j \geq i} B_j\). We see that
+\(\psi(A_i \setminus \tilde B_i) \leq \sum_{j \geq i} \psi(A_i \setminus B_j) \leq 2^{-i}\). Furthermore,
+since \(\tilde B_i \subset B_i\), we have that \(\psi(\tilde B_i \cap S) \leq (1 + i^{-1}) \zeta(S)\) whenever
+\(S \cap \tilde B_i \neq \emptyset\) and
+\(\text{ diam } S \leq \epsilon_i\).
+
+Next, note that \(\psi\left(A_i \setminus \bigcup_j \tilde B_j\right) \leq \psi(A_i \setminus \tilde B_j) \leq
+2^{-j}\)
+for any \(j \geq i\) (recall that \(A_i\) is increasing). Therefore,
+\(\psi\left(A_i \setminus \bigcup_j \tilde B_j\right) = 0\), and we get that
+\(\psi\left( \{ x \mid f(x) > 0 \} \setminus \bigcup_j \tilde B_j \right) = 0\).
+\end{proof}
