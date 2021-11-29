@@ -31,9 +31,25 @@ From the above lemma, when considering \(\psi(A\cap T)\), we need only consider 
 countable collections of \(S_i \subset T\).
 
 \begin{lemma}
-Given a countable collection \(S_i \subset T\) covering \(T \cap A\), there is a finite sub-covering of
+Given a countable collection \(\mathcal C\) of \(S_i \subset T\) covering \(T \cap A\), there is a
+finite sub-covering of
 \(T \cap A\).
 \end{lemma}
 \begin{proof}
-We will be taking advantage of the fact that \(S \in H_j\) are disjoint.
+We will be taking advantage of the nested nature of the \(H_j\). First define the compact sets
+\(C_j = \bigcup \{S \mid S \in H_j, S \subset T, \text{ and } S \text{ not contained in some } R\in\mathcal C\}\).
+Notice that 
+\(\bigcap_j C_j \subset T \cap A\) and any point in this intersection is not covered by \(\mathcal C\);
+therefore \(\bigcap_j C_j = \emptyset\). Furthermore, since \(C_j\) for a decreasing sequence of compact sets,
+we must have that \(C_j = \emptyset\) for some \(j\). Therefore, every \(S\in H_j\) such that \(S\subset T\) is
+contained in some \(R\in\mathcal C\). Since the \(S \in H_j\) such that \(S\subset T\) cover \(T\cap A\), we have
+that the set of such \(R\) also cover \(T\cap A\). Finally, since \(H_j\) is a finite collection of sets, we have
+a finite sub-collection of \(mathcal C\) that covers \(T \cap A\). 
 \end{proof}
+
+Next, note that since any \(S \in H_j\) satisfies \(\zeta(S) = \sum\limits_{R\in H_j, R \subset S} \zeta(R)\), for
+any finite cover of \(T\cap A\) by \(S \in \bigcup_j H_j\), we find that for some \(k\)
+\(\sum_i\zeta(S_i) = \sum\limits_{R \in H_k, R\subset T} \zeta(R) = \zeta(T)\). Furthermore, the \(R\in H_k\)
+such that \(R \subset T\) also cover \(T \cap A\), and so we must have that \(\phi_\delta(T\cap A) \geq \zeta(T)\). 
+Using the properties of speciality, we clearly have the opposite 
+inequality. Therefore \(\phi_\delta(T\cap A) = \zeta(T)\), and we have that \(\psi(T\cap A) = \zeta(T)\).
