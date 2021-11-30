@@ -17,7 +17,7 @@ are any \(S\) that contain the endpoints of \(R\) but are not subsets of \(R\).
 
 Since, \(\lim\limits_{j\to \infty}\sup\limits_{S\in H_j} \text{diam } S = 0\), given \(\epsilon > 0\) and
 \(k\) we may find \(j\) and \(S_i \in H_j\) satisfying \(S_i \subset T\),
-\(T \cap A \cap R \subset \bigcup_i S_i\), and 
+\(A \cap T \cap R \subset \bigcup_i S_i\), and 
 \(\sum_i \zeta(S_i) \leq \epsilon 2^{-1-k} + \zeta(R)\).
 
 Now given a collection of compact intervals \(R_i\) satisfying \(A \cap T \subset \bigcup_i R_i\), do the above
@@ -28,30 +28,31 @@ to find \(S_{ij} \subset T\) such that \(A \cap T \cap R_i \subset \bigcup_j S_{
 \end{proof}
 
 From the above lemma, when considering minimizing sequences of countable collections of \(R\in F\) for
-computing \(\phi_\delta(T \cap A)\),
+computing \(\phi_\delta(A \cap T)\),
 we see that we may consider a minimizing sequence of countable collections of \(S \in \bigcup_j H_j\) where
 each \(S \subset T\).
 
 \begin{lemma}
-Given a countable collection \(\mathcal C\) of \(S_i \subset T\) covering \(T \cap A\), there is a
+Given a countable collection \(\mathcal C\) of \(S_i \subset T\) covering \(A \cap T\), there is a
 finite sub-covering of
-\(T \cap A\).
+\(A \cap T\).
 \end{lemma}
 \begin{proof}
 We will be taking advantage of the nested nature of the \(H_j\). First define the compact sets
 \(C_j = \bigcup \{S \mid S \in H_j, S \subset T, \text{ and } S \text{ not contained in some } R\in\mathcal C\}\).
 Notice that 
-\(\bigcap_j C_j \subset T \cap A\) and any point in this intersection is not covered by \(\mathcal C\);
+\(\bigcap_j C_j \subset A \cap T\) and any point in this intersection is not covered by \(\mathcal C\);
 therefore \(\bigcap_j C_j = \emptyset\). Furthermore, since \(C_j\) for a decreasing sequence of compact sets,
 we must have that \(C_j = \emptyset\) for some \(j\). Therefore, every \(S\in H_j\) such that \(S\subset T\) is
-contained in some \(R\in\mathcal C\). Since the \(S \in H_j\) such that \(S\subset T\) cover \(T\cap A\), we have
-that the set of such \(R\) also cover \(T\cap A\). Finally, since \(H_j\) is a finite collection of sets, we have
-a finite sub-collection of \(\mathcal C\) that covers \(T \cap A\). 
+contained in some \(R\in\mathcal C\). Since the \(S \in H_j\) such that \(S\subset T\) cover \(A\cap T\), we have
+that the set of such \(R\) also cover \(A\cap T\). Finally, since \(H_j\) is a finite collection of sets, we have
+a finite sub-collection of \(\mathcal C\) that covers \(A \cap T\). 
 \end{proof}
 
-Next, note that since any \(S \in H_j\) satisfies \(\zeta(S) = \sum\limits_{R\in H_j, R \subset S} \zeta(R)\), for
-any finite cover of \(T\cap A\) by \(S \in \bigcup_j H_j\), we find that for some \(k\),
+Next, we use that any \(S \in H_j\) satisfies \(\zeta(S) = \sum\limits_{R\in H_j, R \subset S} \zeta(R)\). 
+Repeatedly applying this, we have that for
+any finite cover of \(A\cap T\) by \(S \in \bigcup_j H_j\), we may find some \(k\) such that
 \(\sum_i\zeta(S_i) = \sum\limits_{R \in H_k, R\subset T} \zeta(R) = \zeta(T)\). Furthermore, the \(R\in H_k\)
-such that \(R \subset T\) also cover \(T \cap A\), and so we must have that \(\phi_\delta(T\cap A) \geq \zeta(T)\). 
+such that \(R \subset T\) also cover \(A \cap T\), and so we must have that \(\phi_\delta(A\cap T) \geq \zeta(T)\). 
 Using the properties of speciality, we clearly have the opposite 
-inequality. Therefore \(\phi_\delta(T\cap A) = \zeta(T)\), and we have that \(\psi(T\cap A) = \zeta(T)\).
+inequality. Therefore \(\phi_\delta(A\cap T) = \zeta(T)\), and we have that \(\psi(A\cap T) = \zeta(T)\).
