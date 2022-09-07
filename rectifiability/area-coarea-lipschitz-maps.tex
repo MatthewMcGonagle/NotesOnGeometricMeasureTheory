@@ -1,0 +1,40 @@
+\subsection{Some Remarks on Fereder's Theorem 3.2.5}
+For Federer's Theoerm 3.2.5, the combination of its conditions, its proof, and Federer's short-hand use of integral notation combine to make the theorem a little confusing. Here are some remarks
+to help clarify this issue.
+
+First, recall that when Federer uses \(\int f d\phi\), it includes being used as a short-hand notation for the fact that \(f\) is a \(\phi\)-measurable function and that the integral exists
+(but not necessarily finite). Furthermore, \(\int_A f d\\phi\)
+includes the shorthand that \(f\) restricted to \(A\) is measurable and exists.
+
+Conditions one (i.e. \(g\) is measurable) and two (i.e. \(N(f|A, y) < \infty\) for \(\mathcal H^m\) almost \(y\)) of the theorem should be interpreted as conditions applying to the right hand side
+integral of the theorem:
+\begin{equation}
+\int_A g\left(f(x)\right) J_m f(x) d \mathcal L^mx = \int_{\mathbb R^n} g(y) N(f|A, y) d \mathcal H^m y.
+\end{equation}
+So both include the assumption that the integrand of the left hand side is measurable. This fact is redundant for condition one, but it is important to understand condition two and its proof. 
+
+An important  point in the proof for condition one is that we must show that the left hand side integrand restricted to \(A\) is a measurable function (note that \(g(f(x))\) is not necessarily
+a measurable function by itself). Following the convention of Federer's condition three,
+we use \(\alpha\) to denote the characteristic function of \(A\), and for simplicity we use \(h = \alpha g\left(f(x)\right) J_m f(x)\) denote the left integrand. So we must show that \(h\) is
+a measurable function. 
+
+As in Federer's proof of condition one, we fist consider the case that \(g\) is the characteristic function of an \(\mathcal H^m\) measurable subset \(T\) of \(f(A)\). Since \(f\) is
+Lipschitz, we know that \(f^{-1}(B)\) is measurable for every \(B\). Using this and Federer's comment about decomposing \(T\) into a Borel set and a set with zero \(\mathcal H^m\) measure,
+we need only consider the case that \(\mathcal H^m(T) = 0\). 
+
+From the Borel regularity of \(\mathcal H^m\), there exists a Borel set \(B\) such that \(T \subset B\) and \(H^m(B) = H^m(T) = 0\). Let \(\tilde g\) be the characteristic function of \(B\), and
+we let \(\tilde h = \alpha \tilde g\left(f(x)\right) J_m f(x)\). From Federer Theorem 3.2.3 (2), we know that \(\int \tilde h d \mathcal L^m = 0\). Therefore, we know that 
+\(\mathcal L^m \left( \{ \tilde h > 1/k \} \right) = 0\) for any positive integer \(k\). Hence \(\mathcal L^m \left( \{ \tilde h > 0 \} \right) = 0\). Since \(h \leq \tilde h\), we must have
+have that \(\mathcal L^m\left( \{h > 0\} \right) = 0\) and so is measurable. Since \(h \geq 0\), we then must then have that \(\{h = 0\}\) is a measurable set. With both of these facts, we see
+that \(h\) is measurable. This combined with Federer's argument proves condition one in the case that \(g\) is a characteristic function of measurable subset of \(f(A)\).
+
+For more general measurable \(g\) a standard approximation argument is used much like in Federer. First, for non-negative measurable \(g\), we can write \(g(y) = \sum_i r_i g_i(y)\), where
+each \(g_i\) is the characteristic function of an \(\mathcal H^m\) measurable subset \(T\) of \(f(A)\) (recall that by hypothesis of the theorem that \(g\) is defined everywhere).
+We have a corresponding decomposition of integrands \(h = \sum_i r_i h_i\) for every \(x \in A\). By our work above, we know that each \(h_i\) is measurable and that the result holds again
+for \(g\). For measurable \(g\) of any sign, we do the usual for \(g = g^+ - g^-\). 
+
+Note that the theorem requires that \(g\) is a measrable function defined everywhere, but usually we only require that measurable functions be defined up to a set with measure zero. If \(g\)
+is undefined on a set \(U\) such that \(\mathcal H^m(U) = 0,\) then it is possible that \(\mathcal L^m\left(f^{-1}(U)\right) > 0\). However, from the discussion above we see that
+\(\mathcal L \left(f^{-1}(U) \cap \{J_m f > 0\}\right) = 0\). Hence the integral \(\int f(g(x)) J_m f(x) \mathcal L^m\) will be independent of any values we choose to ``fill in" for \(g\) on \(U\). So
+in this sense the result will still hold for \(g\) defined up to sets with measure zero.
+
