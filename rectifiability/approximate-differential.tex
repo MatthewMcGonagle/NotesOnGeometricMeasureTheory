@@ -1,0 +1,20 @@
+\subsection{Correction of Federer 3.2.16}
+
+When describing the \((\phi, m)\) approximate differential of \(f\) in Federer 3.2.16, Federer states that \(f\) determines the restriction of \(Dg(a)\) to \(\text{Tan}[\{x : f(x) = g(x)\}, a]\),
+but this is not true; however it is true that \(f\) determines the restriction of \(Dg(a)\) to \(\text{Tan}^m(\phi, a)\). Let's look at a counter-example to Federer's claim.
+
+Consider \(\mathbb R^2\), \(\phi = \mathcal H ^1 |_{\{y = 0\}} \), 
+\begin{equation}
+f(x, y) = \begin{cases}
+    x, & y = 0, \\
+    x + y, & x = y^2, \\
+    0, & x= 0, \\
+    -1, & \text{otherwise},
+\end{cases}
+\end{equation}
+\(g_1(x, y) = x\), and \(g_2(x, y) = x + y\). Note that \(\{f(x) = g_1(x) \} = \{y = 0 \} \cup \{x = 0\} \cup \{x = -1\}\) and \(\{f(x) = g_2(x)\} = \{y= 0\} \cup \{x= y^2\} \cup \{x + y = -1\}\).
+So we see that \(\text{Tan}[\{f(x) = g_1(x)\}, 0] = \text{Tan}[\{f(x) = g_1(x)\}, 0] = \{y = 0\} \cup \{x = 0\}\). Also note that
+\(\text{Tan}^1 (\phi, 0) = \{y = 0\}\) and that \(\phi\left(\{f(x) \neq g_1(x)\}\right) = \phi\left(\{f(x) \neq g_2(x)\}\right) = 0\) means that the densities
+\(\Theta^1(\{f(x) \neq g_1(x)\}, 0) = \Theta^1(\{f(x) \neq g_2(x)\}, 0) = 0\).
+Therefore, we see that \(g_1\) and \(g_2\) both meet the conditions for determining the approximate derivative of \(f\), and that\(Dg_1(0)\) and \(Dg_2(0)\) both agree on \(\text{Tan}^1 (\phi, 0)\);
+however they do not agree on \(\text{Tan}[\{f(x) = g_1(x)\}, 0]\) and \(\text{Tan}[\{f(x) = g_2(x)\}, 0]\).
